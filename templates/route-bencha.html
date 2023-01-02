@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="/static/styles.css" rel="stylesheet">
+        <title>Route To Benchakitti Park</title>
+        <script src="https://kit.fontawesome.com/4db043bd42.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body data-barba="wrapper">
+
+    <div class="load-container">
+        <div class="loading-screen"></div>
+    </div>
+
+    <main data-barba="container" data-barba-namespace="bencha">
+
+    <header>
+
+        <nav class="navbar navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="https://cs50.harvard.edu/x/2022/project/">CS50's Final Project</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" aria-current="page" href="/home" rel="noreferrer noopenner">Home</a>
+                        <a class="nav-link" href="/main" rel="noreferrer noopenner">WhereTo</a>
+                        <a class="nav-link" href="/contact" rel="noreferrer noopenner">Contact</a>
+                        <a class="nav-link disabled">Add Locations (Next Features)</a>
+                        <a class="nav-link" href="/logout" rel="noreferrer noopenner">Log out</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+
+        <div class="animated">
+            <div id="map"></div>
+            <div class="description-route">
+                <div class="topic">
+                    <p>Route To Benchakitti Park, Total price: ฿{{ total }}</p>
+                </div>
+
+                <div class="route-1">
+                    <p>First<br>
+                    "Use community transport vehicle(SongTaew) to Airport Railink Ladkrabang"<br>
+                    Additional: can be both Min Buri or Kheha Romkloa<br>
+                    Price: ฿{{ commu_p }}</p>
+                </div>
+
+                <div class="route-2">
+                    <p>Second<br>
+                    "Go to Airport Raillink Makkhasan Station"<br>
+                    Additional: "Use exit 2 or 3 to arrive at MRT Phetchaburi station"<br>
+                    Price: ฿{{ air_p }}</p>
+                </div>
+
+                <div class="route-3">
+                    <p>Lastly!!<br>
+                    "Go to MRT QSNCC station"<br>
+                    Additional: Platform 1 side<br>
+                    Price: ฿{{ mrt_p }}</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script async
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAT1TnhoIwstwkl5jls0seYzhSa5Z8NTAg&callback=initMapBencha">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+    <script src="/static/app.js"></script>
+
+</body>
+
+</html>
